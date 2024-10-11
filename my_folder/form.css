@@ -1,0 +1,84 @@
+body {
+    font-family: Inter;
+    background-color: lightgreen;
+    height: 100vh; /* Full height for vertical centering */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.form-container {
+    width: 676px; /* Maximum width */
+    padding: 20px;
+    margin: auto;
+}
+
+.form-page {
+    height: fit-content;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+}
+
+.form-page.active {
+    display: block;
+}
+
+label {
+    display: block;
+    margin-top: 16px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.page-number {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 12px;
+    color: gray;
+}
+
+.sublabel {
+    font-size: 0.8em; /* Smaller font for sublabel */
+    color: #666;      /* Lighter color for sublabel */
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.input-box {
+    select{
+        width: 108%;
+        margin-right: -8rem;
+    }
+}
+
+.required {
+    color: red;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="multiPageForm">
+            <div class="form-page" id="page1">
+                <div class="page-number">Page 1</div>
+                <h1>Application Form</h1>
+                <hr/>
+                <label for="businessName">Business Legal Name<span class="required">*</span></label> 
+                <input type="text" id="businessName" name="businessName" required>
+                <label for="businessAlias">Business D/B/A Name<span class="required">*</span></label>
+                <input type="text" id="businessAlias" name="businessName">
+                <label for="industry">Industry<span class="required">*</span></label>
+                <input type="text" id="industry" name="industry" required>
+                <label for="legalEntity">Legal Entity<span class="required">*</span></label>
+                <input type="text" id="legalEntity" name="legalEntity" required>
+                <label for="startDate">Business Start Date</label>
+                <input type="date" id="startDate" name="startDate">
+                <label for="EIN">EIN<span class="required">*</span></label>
+                <input type="text" id="EIN" name="EIN" placeholder="XX-XXXXXXX" pattern="\d{9}"  required>
+                <label for="website">Website</label>
+                <input type="url" id="website" name="website">
+                <label for="companyAddress">Street Address<span class="required">*</span></label>
+                <input type="text" id="companyAddress" name="companyAddress" required>
+                <small class="sublabel">Street Address</small>
+                <input type="text" id="companyAddress2" name="companyAddress2" >
+                <small class="sublabel">Street Address Line 2</small>
+                <br/>    
+                <div class="input-container">
+                    <div class="input-box">
+                        <input type="text" id="companyCity">
+                        <div class="sublabel">City</div>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="companyState">
+                        <div class="sublabel">State/Province</div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="input-box">
+                        <input type="text" id="companyZip">
+                        <div class="sublabel">Zip Code</div>
+                    </div>
+                    <div class="input-box">
+                        <select id="companyCountry" name="companyCountry" required>
+                            <option value="">Please Select</option>
+                        </select>
+                        <div class="sublabel">Country</div>
+                    </div>
+                </div>
+                <label for="businesPhone">Business Phone<span class="required">*</span></label>
+                <input type="tel" id="businesPhone" name="businesPhone" required>
+                <small class="sublabel">Please Enter a Valid Phone Number</small>
+
+                <label for="loanAmount">Requested Loan Amount<span class="required">*</span></label>
+                <input type="number" id="loanAmount" name="loanAmount" min="0" required>
+
+                <label for="loanPurpose">Loan Purpose<span class="required">*</span></label>
+                <input type="text" id="loanPurpose" name="loanPurpose" required>
+
+                
+<!-- fff     Home address/ dob /ssn/ email/ mobile/ fico/ mca balance, do you have a real estate -->
+            </div>
+            <div class="form-page" id="page2">
+                <div class="page-number">Page 2</div>
+                <label for="ownerName">Owner's Name<span class="required">*</span></label> 
+                <input type="text" id="ownerName" name="ownerName" required>
+                <label for="ownership">Ownership %<span class="required">*</span></label> 
+                <input type="number" id="ownership" name="ownership" min="0" max="100" required>
+                <label for="address">Street Address<span class="required">*</span></label>
+                <input type="text" id="address" name="address" required>
+                <small class="sublabel">Street Address</small>
+                <input type="text" id="address2" name="address2" >
+                <small class="sublabel">Street Address Line 2</small>
+                <br/>    
+                <div class="input-container">
+                    <div class="input-box">
+                        <input type="text" id="city">
+                        <div class="sublabel">City</div>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="state">
+                        <div class="sublabel">State/Province</div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="input-box">
+                        <input type="text" id="zip">
+                        <div class="sublabel">Zip Code</div>
+                    </div>
+                    <div class="input-box">
+                        <select id="country" name="country" required>
+                            <option value="">Please Select</option>
+                        </select>
+                        <div class="sublabel">Country</div>
+                    </div>
+                </div>
+
+                <label for="dob">Date of Birth<span class="required">*</span></label>
+                <input type="date" id="dob" name="dob" required>
+                <label for="email">Email Address<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone Number<span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="fico">FICO<span class="required">*</span></label> 
+                <input type="number" id="fico" name="fico" min="300" max="850" required>
+
+                
+                <label for="fico">Do you have a real estate?<span class="required">*</span></label> 
+                    
+                <input type="radio" name="property" value="yes" required> Yes
+                <input type="radio" name="property" value="no"> No
+            </div>
+            <div id="review"></div>
+                <button type="submit" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        fetch('countries.json')
+        .then(response => response.json())
+        .then(countries => {
+            const select = document.getElementById('country');
+            const business = document.getElementById('companyCountry');
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                const companyOption = document.createElement('option');
+                option.value = country.code;
+                option.textContent = country.name;
+                companyOption.value = country.code;
+                companyOption.textContent = country.name;
+                select.appendChild(option);
+                business.appendChild(companyOption);
+            });
+        })
+        .catch(error => console.error('Error loading countries:', error));
+            console.log("here")
+    </script>
+    <script src="form.js"></script>
+</body>
+</html>
