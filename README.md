@@ -6,9 +6,9 @@ This project requires node and npm.
 
 ### Run app in a container
 - Docker-desktop needed
-- ```docker build -t pathway```  (Build image and install all the dependencies)    
-- ```docker run -p 3000:3000 pathway``` (Docker will map the container at port 3000 as well)
+- ```docker build -t template```  (Build image and install all the dependencies)    
+- ```docker run -p 3000:3000 template``` (Docker will map the container at port 3000 as well)
 
 ### Stack
-Built with Html, CSS, Javacript, sqlite3, Express, and Docker
+Built with Html, CSS, Javascript, sqlite3, Express, and Docker
 
