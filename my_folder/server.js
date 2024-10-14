@@ -84,7 +84,7 @@ app.post('/submit', async (req, res) => {
     console.log(JSON.stringify(data)); // Log the data to the console for demonstration
     try {        
         // Call the function with example data
-        const result = await insertData(exampleData); // Insert data into the database
+        const result = await insertData(JSON.stringify(data)); // Insert data into the database
         res.json({ message: 'Data received successfully', id: result.id });
     } catch (error) {
         // console.error(error);
