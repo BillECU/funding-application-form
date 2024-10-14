@@ -12,6 +12,7 @@ This project requires Node.js and npm.
 ### Stack
 Built with Html, CSS, Javascript, sqlite3, Express, and Docker
 
+### Demo
 
 ![](page1.png)
 ![](page2.png)
