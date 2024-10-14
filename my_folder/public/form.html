@@ -59,15 +59,10 @@
                 <label for="businessPhone">Business Phone<span class="required">*</span></label>
                 <input type="tel" id="businessPhone" name="businessPhone" required>
                 <small class="sublabel">Please Enter a Valid Phone Number</small>
-
                 <label for="loanAmount">Requested Loan Amount<span class="required">*</span></label>
                 <input type="number" id="loanAmount" name="loanAmount" min="0" required>
-
                 <label for="loanPurpose">Loan Purpose<span class="required">*</span></label>
                 <input type="text" id="loanPurpose" name="loanPurpose" required>
-
-                
-<!-- fff     Home address/ dob /ssn/ email/ mobile/ fico/ mca balance, do you have a real estate -->
             </div>
             <div class="form-page" id="page2">
                 <div class="page-number">Page 2</div>
@@ -104,7 +99,6 @@
                         <div class="sublabel">Country</div>
                     </div>
                 </div>
-
                 <label for="dob">Date of Birth<span class="required">*</span></label>
                 <input type="date" id="dob" name="dob" required>
                 <label for="email">Email Address<span class="required">*</span></label>
@@ -113,15 +107,12 @@
                 <input type="tel" id="phone" name="phone" required>
                 <label for="fico">FICO<span class="required">*</span></label> 
                 <input type="number" id="fico" name="fico" min="300" max="850" required>
-
-                
                 <label for="fico">Do you have a real estate?<span class="required">*</span></label> 
-                    
                 <input type="radio" name="property" value="yes" required> Yes
                 <input type="radio" name="property" value="no"> No
             </div>
             <div id="review"></div>
-                <button type="submit" onclick="submitForm()">Submit</button>
+                <button type="submit" onclick="submitForm()" style="float: right;">Submit</button>
         </form>
         <button onclick="testSubmission()">Fetch Submissions</button>
     </div>
