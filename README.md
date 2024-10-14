@@ -12,3 +12,8 @@ This project requires Node.js and npm.
 ### Stack
 Built with Html, CSS, Javascript, sqlite3, Express, and Docker
 
+
+![](page1.png)
+![](page2.png)
+![](submit.png)
+
